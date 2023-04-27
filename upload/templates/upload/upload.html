@@ -1,0 +1,34 @@
+{% extends "upload/base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="upload-section" id="UPLOAD_IMAGES">
+        <!-- <h2 class="headtext" id="share-you-captures">
+            Share Your Captures with the Community!
+        
+        </h2>
+        <br> -->
+        <form class="fields" action="#" method="post" id="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="image">Upload Image:</label>
+                <input type="file" name="image" id="image" required>
+            </div>
+            <div class="form-group">
+                <label for="tag1">Tag 1:</label>
+                <input type="text" name="tag1" id="tag1">
+            </div>
+            <div class="form-group">
+                <label for="tag2">Tag 2:</label>
+                <input type="text" name="tag2" id="tag2">
+            </div>
+            <div class="form-group">
+                <label for="tag3">Tag 3:</label>
+                <input type="text" name="tag3" id="tag3">
+            </div>
+            <button class="submit" id="SUBMIT" type="submit">
+                <b class="submit1">Submit</b>
+            </button>
+        </form>
+    </section>
+{% endblock %}

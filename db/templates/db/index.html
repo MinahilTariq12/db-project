@@ -1,0 +1,34 @@
+{% extends "db/base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="frame-parent" id="hero">
+  <div class="mask-group-parent" id="hero">
+    <img class="mask-group-icon" alt="" src="{% static 'db/Hero section text.svg'%}" />
+    <form method="POST" action="{% url 'search:search' %}">
+      {% csrf_token %}
+      <div class="frame-group">
+        <input class="frame-child" type="text" name="query" placeholder="Explore their captures" required maxlength="1000">
+        <button class="icon-chevron-right-wrapper" id="frameButton" type="submit">
+          <div class="icon-chevron-right">
+            <img class="vector-icon" alt="" src="{% static 'db/vector.svg'%}" />
+          </div>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+
+{% if matching_images %}
+  <div>
+    {% for image_url in matching_images %}
+      <img src="{{ image_url }}" alt="">
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% if no_match %}
+  <p>No matching images found.</p>
+{% endif %}

@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{% static 'db/index.css'%}" />
+    <link rel="stylesheet" href="{% static 'db/results.css'%}" />
+    <link rel="stylesheet" href="{% static 'db/signup.css'%}" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> 
+  -->
+
+
+
+  </head>
+  <body>
+    {% block nav %}
+      <nav class="navbar" id="navbar">
+        <a href="{% static '.index.html' %}">
+              <button class="logo-container" id="nav_logo">
+                <img class="logo-container-child" alt="" src="{% static 'db/star-1.svg'%}" />
+              </button>
+        <div class="nav-links-container">
+          <a class="uplodas" id="uploads_nav_button"
+            ><img class="uploads-icon" alt="" src="{% static 'db/uploads.svg'%}" /></a
+          ><a class="uplodas" id="fav_nav_button"
+            ><img class="favorites-icon" alt="" src="{% static 'db/favorites.svg'%}" /></a
+          ><a class="uplodas" id="user_nav_button"
+            ><img class="profile-icon" alt="" src="{% static 'db/profile.svg'%}" /></a
+          ><button class="profule" id="upload_green_button">
+            <img class="upload-icon" alt="" src="{% static 'db/upload.svg'%}" />
+          </button>
+        </div>
+      </nav>
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+      <footer class="footer" id="Footer"></footer>
+    {% endblock %}
+  </body>
+</html>
+
+

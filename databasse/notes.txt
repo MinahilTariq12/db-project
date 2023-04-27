@@ -1,0 +1,4 @@
+# add favorites
+# remove repetition
+# add the footer
+# make the grid designed
